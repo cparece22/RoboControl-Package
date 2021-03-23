@@ -15,6 +15,8 @@ def stop():
     HBridge.setMotorRight(0)
 
 def front():
+    global speedleft
+    global speedright
     speedleft = speedleft + 1       #the number here can be changed to increase or decrease the acceleration
     speedright = speedright + 1     #the number here can be changed to increase or decrease the acceleration
 
@@ -27,6 +29,8 @@ def front():
     HBridge.setMotorRight(speedright)
 
 def left():
+    global speedleft
+    global speedright
     speedleft = speedleft - 1       #the number here can be changed to increase or decrease the acceleration
     speedright = speedright + 1     #the number here can be changed to increase or decrease the acceleration
     if speedleft < -1:
@@ -37,6 +41,8 @@ def left():
     HBridge.setMotorRight(speedright)
 
 def right():
+    global speedleft
+    global speedright
     speedleft = speedleft + 1       #the number here can be changed to increase or decrease the acceleration
     speedright = speedright - 1     #the number here can be changed to increase or decrease the acceleration
     if speedleft > 1:
@@ -47,6 +53,8 @@ def right():
     HBridge.setMotorRight(speedright)
 
 def back():
+    global speedleft
+    global speedright
     speedleft = speedleft - 1       #the number here can be changed to increase or decrease the acceleration
     speedright = speedright - 1     #the number here can be changed to increase or decrease the acceleration
     if speedleft < -1:
