@@ -108,7 +108,7 @@ if __name__ == '__main__':
         print("Pygame Window Opened")
         while running:
             try:
-                if x >= 1000:
+                if x >= 7500:
                     x = 0
                     clients[0]["Connection"].sendall(b'None')
                     print("ping sent")

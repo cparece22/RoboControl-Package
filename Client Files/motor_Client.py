@@ -24,7 +24,7 @@ def main():
     while connected:
         input = sock.recv(4092)
         data = input.decode()
-        if data == "esc":
+        if "esc" in data:
             movement('esc')
             sock.close()
             connected = False
