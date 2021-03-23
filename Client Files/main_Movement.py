@@ -15,8 +15,6 @@ def movement(data):
         motor_Direction.right()
     elif usrin == '0':
         motor_Direction.stop()
-    elif usrin == 'esc':
-        motor_Direction.quit()
     elif usrin == 'None':
         print("ping recieved")
     else:

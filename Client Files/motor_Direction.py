@@ -1,70 +1,23 @@
 import RoboPiLib as RPL
 import setup
 from time import sleep
-import sys, tty, termios, os
-import NameJeff as HBridge #I know that this is weird but NameJeff is what the setup thing is called
-
-speedleft = 0
-speedright = 0
-###EDIT THESE IF NEEDED
-
-
-
-def stop():
-    HBridge.setMotorLeft(0)
-    HBridge.setMotorRight(0)
 
 def front():
-    global speedleft
-    global speedright
-    speedleft = speedleft + 1       #the number here can be changed to increase or decrease the acceleration
-    speedright = speedright + 1     #the number here can be changed to increase or decrease the acceleration
-
-    if speedleft > 1:
-        speedleft = 1
-    if speedright > 1:
-        speedright = 1
-
-    HBridge.setMotorLeft(speedleft)
-    HBridge.setMotorRight(speedright)
-
-def left():
-    global speedleft
-    global speedright
-    speedleft = speedleft - 1       #the number here can be changed to increase or decrease the acceleration
-    speedright = speedright + 1     #the number here can be changed to increase or decrease the acceleration
-    if speedleft < -1:
-        speedleft = -1      #make this value higher to make the turn less sharp
-    if speedright > 1:
-        speedright = 1
-    HBridge.setMotorLeft(speedleft)
-    HBridge.setMotorRight(speedright)
-
-def right():
-    global speedleft
-    global speedright
-    speedleft = speedleft + 1       #the number here can be changed to increase or decrease the acceleration
-    speedright = speedright - 1     #the number here can be changed to increase or decrease the acceleration
-    if speedleft > 1:
-        speedleft = 1
-    if speedright < -1:
-        speedright = -1     #make this value higher to make the turn less sharp
-    HBridge.setMotorLeft(speedleft)
-    HBridge.setMotorRight(speedright)
+    RPL.servoWrite(0,1600)
+    RPL.servoWrite(1,1400)
 
 def back():
-    global speedleft
-    global speedright
-    speedleft = speedleft - 1       #the number here can be changed to increase or decrease the acceleration
-    speedright = speedright - 1     #the number here can be changed to increase or decrease the acceleration
-    if speedleft < -1:
-        speedleft = -1
-    if speedright < -1:
-        speedright = -1
-    HBridge.setMotorLeft(speedleft)
-    HBridge.setMotorRight(speedright)
+    RPL.servoWrite(0,1400)
+    RPL.servoWrite(1,1600)
 
-def exit():
-    HBridge.setMotorLeft(0)
-    HBridge.setMotorRight(0)
-    HBridge.exit()
+def left():
+    RPL.servoWrite(0,1550)
+    RPL.servoWrite(1,1400)
+
+def right():
+    RPL.servoWrite(0,1600)
+    RPL.servoWrite(1,1450)
+
+def stop():
+    RPL.servoWrite(0,0)
+    RPL.servoWrite(1,0)
