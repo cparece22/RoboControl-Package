@@ -108,7 +108,7 @@ if __name__ == '__main__':
         print("Pygame Window Opened")
         while running:
             try:
-                if x >= 1000:
+                if x >= 1500:
                     x = 0
                     clients[0]["Connection"].sendall(b'None')
                     print("ping sent")
@@ -118,14 +118,27 @@ if __name__ == '__main__':
                 for event in pygame.event.get():
                     data = " "
                     if event.type == pygame.KEYDOWN:
-                        if event.key == pygame.K_w:
-                            clients[0]["Connection"].send(b'w')
-                        elif event.key == pygame.K_s:
-                            clients[0]["Connection"].send(b's')
-                        elif event.key == pygame.K_a:
-                            clients[0]["Connection"].send(b'a')
-                        elif event.key == pygame.K_d:
-                            clients[0]["Connection"].send(b'd')
+
+                        if event.key == pygame.K_r:
+                            clients[0]["Connection"].send(b'r')
+                        elif event.key == pygame.K_f:
+                            clients[0]["Connection"].send(b'f')
+
+                        elif event.key == pygame.K_t:
+                            clients[0]["Connection"].send(b't')
+                        elif event.key == pygame.K_g:
+                            clients[0]["Connection"].send(b'g')
+
+                        elif event.key == pygame.K_y:
+                            clients[0]["Connection"].send(b'y')
+                        elif event.key == pygame.K_h:
+                            clients[0]["Connection"].send(b'h')
+
+                        elif event.key == pygame.K_u:
+                            clients[0]["Connection"].send(b'u')
+                        elif event.key == pygame.K_j:
+                            clients[0]["Connection"].send(b'j')
+
                         elif event.key == pygame.K_q:
                             clients[0]["Connection"].send(b'esc')
                             clients[0]["Connection"].close()

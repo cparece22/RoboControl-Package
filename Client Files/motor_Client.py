@@ -24,7 +24,9 @@ def main():
     while connected:
         input = sock.recv(4092)
         data = input.decode()
+        #maybe split the data and get rid of repetes?
         if data == "esc":
+        #if esc in data?
             movement('esc')
             sock.close()
             connected = False
